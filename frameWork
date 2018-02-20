@@ -1,0 +1,42 @@
+class DAGNode:
+
+
+    def __init__(self, name, executionTime):
+        self.executionTime = executionTime
+        self.children = []
+        self.name = name
+        self.parent = []
+        self.score
+
+    def addChild(self, childNode, dataAmount):
+        self.children.append([childNode, dataAmount])
+        
+class DAG:
+    def __init__(self, nodes = []):
+        self.nodes = nodes
+        self.root
+        
+
+
+class CPUNode:
+    def __init__(self, name, computationPower, nwcapacity):
+        self.computationPower = computationPower
+        self.name = name
+        self.nwcapacity = nwcapacity
+
+
+totalCapacity = 10
+
+
+def main():
+    cluster = initialCluster()#initialize CPUs and return List of CPUs
+    DAGs = initialinout() #initialize all the DAGs and return a list of tuple (DAG, timestamp)
+    drawDADs();
+    schedule(DAGs, cluster, totalCapacity);
+    drawSchedulingPlan();
+    
+
+
+
+
+
